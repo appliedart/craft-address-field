@@ -36,6 +36,6 @@
         "developerUrl": "https://appliedart.com",
         "documentationUrl": "https://github.com/appliedart/craft-address-field/blob/master/README.md",
         "changelogUrl": "https://raw.githubusercontent.com/address-field/address-field/master/CHANGELOG.md",
-        "class": "appliedart\\addressfield\\AddressField"
+        "class": "appliedart\\addressfield\\AddressFieldPlugin"
     }
 }

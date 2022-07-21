@@ -10,7 +10,7 @@
 
 namespace appliedart\addressfield\fields;
 
-use appliedart\addressfield\AddressField;
+use appliedart\addressfield\AddressFieldPlugin;
 use appliedart\addressfield\assetbundles\addressfield\AddressFieldAsset;
 
 use Craft;

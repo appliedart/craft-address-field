@@ -22,14 +22,14 @@ use craft\events\RegisterComponentTypesEvent;
 use yii\base\Event;
 
 /**
- * Class AddressField
+ * Class AddressFieldPlugin
  *
  * @author    Applied Art
  * @package   AddressField
  * @since     1.0.0
  *
  */
-class AddressField extends Plugin
+class AddressFieldPlugin extends Plugin
 {
     // Static Properties
     // =========================================================================
