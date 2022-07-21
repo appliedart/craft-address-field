@@ -1,0 +1,41 @@
+{
+    "name": "appliedart/address-field",
+    "description": "Expose address element field.",
+    "type": "craft-plugin",
+    "version": "0.1.0",
+    "keywords": [
+        "craft",
+        "cms",
+        "craftcms",
+        "craft-plugin",
+        "address field"
+    ],
+    "support": {
+        "docs": "https://github.com/appliedart/craft-address-field/blob/master/README.md",
+        "issues": "https://github.com/appliedart/craft-address-field/issues"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Applied Art",
+            "homepage": "https://appliedart.com"
+        }
+    ],
+    "require": {
+        "craftcms/cms": "^4.0.0"
+    },
+    "autoload": {
+        "psr-4": {
+          "appliedart\\addressfield\\": "src/"
+        }
+    },
+    "extra": {
+        "name": "Address Field",
+        "handle": "address-field",
+        "developer": "Applied Art",
+        "developerUrl": "https://appliedart.com",
+        "documentationUrl": "https://github.com/appliedart/craft-address-field/blob/master/README.md",
+        "changelogUrl": "https://raw.githubusercontent.com/address-field/address-field/master/CHANGELOG.md",
+        "class": "appliedart\\addressfield\\AddressField"
+    }
+}
