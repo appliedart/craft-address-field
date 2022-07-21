@@ -1,0 +1,26 @@
+{# @var craft \craft\web\twig\variables\CraftVariable #}
+{#
+/**
+ * Address Field plugin for Craft CMS
+ *
+ * Address Field Settings
+ *
+ * @author    Applied Art
+ * @copyright Copyright (c) 2022 Applied Art
+ * @link      https://appliedart.com
+ * @package   AddressField
+ * @since     1.0.0
+ */
+#}
+
+{% import "_includes/forms" as forms %}
+
+{% do view.registerAssetBundle("appliedart\\addressfield\\assetbundles\\addressfield\\AddressFieldAsset") %}
+
+{{ forms.textField({
+    label: 'Some Attribute',
+    instructions: 'Enter some attribute here.',
+    id: 'someAttribute',
+    name: 'someAttribute',
+    value: field['someAttribute']})
+}}
