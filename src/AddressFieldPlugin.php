@@ -10,7 +10,7 @@
 
 namespace appliedart\addressfield;
 
-// use appliedart\addressfield\fields\Address as AddressField;
+use appliedart\addressfield\fieldlayoutelements\elements\ModifiedAddressesField;
 
 use Craft;
 use craft\base\Plugin;

@@ -38,40 +38,8 @@ use craft\fieldlayoutelements\users\AddressesField;
  * @package   AddressField
  * @since     1.0.0
  */
-class Address extends AddressesField
+class ModifiedAddressesField extends AddressesField
 {
-    // Public Properties
-    // =========================================================================
-
-    /**
-     * @var string
-     */
-    public $someAttribute = 'Some Default';
-
-    // Static Methods
-    // =========================================================================
-
-    /**
-     * @inheritdoc
-     */
-    public static function displayName(): string
-    {
-        return Craft::t('address-field', 'Addresses');
-    }
-
-    /**
-     * @inheritdoc
-     */
-    public static function isSelectable(): bool
-    {
-        return true;
-    }
-
-    public function useFieldset(): bool
-    {
-        return parent::useFieldset();
-    }
-
     /**
      * @inheritdoc
      */
