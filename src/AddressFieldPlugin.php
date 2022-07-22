@@ -10,14 +10,16 @@
 
 namespace appliedart\addressfield;
 
-use appliedart\addressfield\fields\Address as AddressField;
+// use appliedart\addressfield\fields\Address as AddressField;
 
 use Craft;
 use craft\base\Plugin;
 use craft\services\Plugins;
 use craft\events\PluginEvent;
+use craft\models\FieldLayout;
 use craft\services\Fields;
 use craft\events\RegisterComponentTypesEvent;
+use craft\fieldlayoutelements\users\AddressesField;
 
 use yii\base\Event;
 
@@ -45,17 +47,17 @@ class AddressFieldPlugin extends Plugin
     /**
      * @var string
      */
-    public $schemaVersion = '1.0.0';
+    public string $schemaVersion = '1.0.0';
 
     /**
      * @var bool
      */
-    public $hasCpSettings = false;
+    public bool $hasCpSettings = false;
 
     /**
      * @var bool
      */
-    public $hasCpSection = false;
+    public bool $hasCpSection = false;
 
     // Public Methods
     // =========================================================================
@@ -63,18 +65,32 @@ class AddressFieldPlugin extends Plugin
     /**
      * @inheritdoc
      */
-    public function init()
+    public function init(): void
     {
         parent::init();
         self::$plugin = $this;
 
-        Event::on(
+        /*        Event::on(
             Fields::class,
             Fields::EVENT_REGISTER_FIELD_TYPES,
             function (RegisterComponentTypesEvent $event) {
                 $event->types[] = AddressField::class;
             }
         );
+*/
+
+        Event::on(FieldLayout::class, FieldLayout::EVENT_DEFINE_NATIVE_FIELDS, function (DefineFieldLayoutFieldsEvent $event) {
+            /** @var FieldLayout $fieldLayout */
+            $fieldLayout = $event->sender;
+
+            switch ($fieldLayout->type) {
+                case Category::class:
+                case Entry::class:
+                    $event->fields[] = AddressesField::class;
+                    break;
+            }
+        });
+
 
         Event::on(
             Plugins::class,
